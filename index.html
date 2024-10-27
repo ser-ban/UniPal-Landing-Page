@@ -50,7 +50,7 @@
 
         .logo {
             margin-top: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 85px;
             width: 48px;
             height: 48px;
             display: flex;
@@ -83,19 +83,20 @@
         main {
             flex: 1;
             padding: 20px;
-            background: linear-gradient(180deg, var(--yellow) 0%, rgba(255,215,102,0.1) 100%);
+            background: radial-gradient(circle at top right, var(--yellow) 20%, rgba(255,215,102,0.1) 30%);
             position: relative;
         }
 
         h1 {
             font-family: 'Pier Sans', sans-serif;
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            line-height: 150%;
         }
 
         p {
             font-family: 'Montserrat', sans-serif;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             line-height: 1.5;
         }
 
@@ -106,6 +107,7 @@
         }
 
         input[type="email"] {
+            margin-bottom: 0.2rem;
             width: 100%;
             padding: 1rem;
             border: none;
@@ -222,8 +224,8 @@
             position: absolute;
             left: -10px;
             right: -10px;
-            bottom: -7px;
-            height: 15px;
+            bottom: -19px;
+            height: 13px;
             background-image: url('assets/images/underline.svg');
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -237,7 +239,7 @@
         .success-message h1 {
             font-size: 2.5rem;
             line-height: 1.2;
-            margin-bottom: 1rem;
+            margin-bottom: 17rem;
         }
     </style>
 </head>
@@ -248,7 +250,7 @@
         <div class="logo">
             <img src="assets/images/logo.png" alt="UniPal Logo">
         </div>
-        <h1>Cu <span class="highlight">UNIPAL</span> ziua înveți și noaptea petreci!</h1>
+        <h1>Cu <span class="highlight">UNIPAL</span><br>ziua înveți și<br> noaptea petreci!</h1>
         <p>UniPal este platforma generației tinere care își dorește să profite la maxim de viața de student: reduceri prin obligațiile oferite special, evenimente educaționale și de divertisment, curator profesionist de evenimente de networking, astfel încât să-ți simplificăm accesul la tot ceea ce contează pentru tine.</p>
         
         <form class="email-form" onsubmit="handleSubmit(event)">
@@ -257,7 +259,7 @@
         </form>
         
         <div class="success-message" style="display: none;">
-            <h1>Interesul tău<br>pentru aplicația<br>noastră a fost<br><span class="underline-2" style="font-size: 1.2em;">înregistrat!</span></h1>
+            <h1>Interesul tău<br>pentru aplicația<br>noastră a fost<br><span class="underline-2">înregistrat!</span></h1>
         </div>
     </main>
 
