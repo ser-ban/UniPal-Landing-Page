@@ -45,19 +45,27 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
         .logo {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            top: 1.5rem;
-            left: 1.5rem;
-            background-image: url('assets/images/logo.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-color: transparent;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            min-width: 300px;
+            min-height: 300px;
+            object-fit: contain;
+            max-width: 100%;
+            display: block;
         }
 
         header {
@@ -74,10 +82,9 @@
 
         main {
             flex: 1;
-            padding: 2rem 1rem;
+            padding: 20px;
             background: linear-gradient(180deg, var(--yellow) 0%, rgba(255,215,102,0.1) 100%);
             position: relative;
-            padding-top: 5rem;
         }
 
         h1 {
@@ -190,20 +197,68 @@
         .social-icons .linkedin {
             background-image: url('assets/images/linkedin.svg');
         }
+
+        .underline, .underline-2, 
+        h1 .highlight {
+            position: relative;
+            display: inline-block;
+        }
+
+        .underline::after,
+        h1 .highlight::after {
+            content: '';
+            position: absolute;
+            left: -5px;
+            right: -5px;
+            bottom: -4px;
+            height: 8px;
+            background-image: url('assets/images/underline.svg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .underline-2::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            right: -10px;
+            bottom: -7px;
+            height: 15px;
+            background-image: url('assets/images/underline.svg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .success-message {
+            text-align: left;
+            padding: 2rem;
+        }
+
+        .success-message h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
     <header>
     </header>
     <main>
-        <div class="logo"></div>
-        <h1>Cu UNIPAL<br>ziua înveți și<br>noaptea petreci!</h1>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="UniPal Logo">
+        </div>
+        <h1>Cu <span class="highlight">UNIPAL</span> ziua înveți și noaptea petreci!</h1>
         <p>UniPal este platforma generației tinere care își dorește să profite la maxim de viața de student: reduceri prin obligațiile oferite special, evenimente educaționale și de divertisment, curator profesionist de evenimente de networking, astfel încât să-ți simplificăm accesul la tot ceea ce contează pentru tine.</p>
         
-        <form class="email-form">
-            <input type="email" placeholder="Adresa ta de email" required>
+        <form class="email-form" onsubmit="handleSubmit(event)">
+            <input type="email" placeholder="Adresa ta de email" required minlength="1">
             <button type="submit" class="cta">Sunt interesat</button>
         </form>
+        
+        <div class="success-message" style="display: none;">
+            <h1>Interesul tău<br>pentru aplicația<br>noastră a fost<br><span class="underline-2" style="font-size: 1.2em;">înregistrat!</span></h1>
+        </div>
     </main>
 
     <footer>
@@ -222,4 +277,17 @@
         </div>
     </footer>
 </body>
+ <script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input[type="email"]').value;
+        
+        if (email.length > 0) {
+            document.querySelector('.email-form').style.display = 'none';
+            document.querySelector('h1').style.display = 'none';
+            document.querySelector('p').style.display = 'none';
+            document.querySelector('.success-message').style.display = 'block';
+        }
+    }
+ </script>
 </html>
