@@ -50,21 +50,18 @@
         .logo {
             width: 40px;
             height: 40px;
-            border-radius: 50%;
-            background-color: var(--navy);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background-image: url('assets/images/logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: transparent;
         }
 
         header {
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: none;
         }
 
         .hamburger {
@@ -79,6 +76,8 @@
             flex: 1;
             padding: 2rem 1rem;
             background: linear-gradient(180deg, var(--yellow) 0%, rgba(255,215,102,0.1) 100%);
+            position: relative;
+            padding-top: 5rem;
         }
 
         h1 {
@@ -195,10 +194,9 @@
 </head>
 <body>
     <header>
-        <div class="logo"></div>
     </header>
-
     <main>
+        <div class="logo"></div>
         <h1>Cu UNIPAL<br>ziua înveți și<br>noaptea petreci!</h1>
         <p>UniPal este platforma generației tinere care își dorește să profite la maxim de viața de student: reduceri prin obligațiile oferite special, evenimente educaționale și de divertisment, curator profesionist de evenimente de networking, astfel încât să-ți simplificăm accesul la tot ceea ce contează pentru tine.</p>
         
