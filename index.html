@@ -3,27 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniPal</title>
+    <title>UniPal - învață și petrece</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <style>
-        body {
+        @font-face {
+            font-family: 'Pier Sans';
+            src: url('assets/fonts/PierSans-Bold.woff2') format('woff2'),
+                url('assets/fonts/PierSans-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pier Sans';
+            src: url('assets/fonts/PierSans-Regular.woff2') format('woff2'),
+                url('assets/fonts/PierSans-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --navy: #0A0A6F;
+            --yellow: #FFD766;
+            --gray: #F5F5F5;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Pier Sans', sans-serif;
+            max-width: 390px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-image: url('assets/images/logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        header {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 1rem;
+            background: linear-gradient(180deg, var(--yellow) 0%, white 100%);
+        }
+
         h1 {
-            font-size: 3rem;
-            color: #333;
-            text-align: center;
-            padding: 20px;
+            font-family: 'Pier Sans', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input[type="email"] {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            background: var(--gray);
+        }
+
+        button.cta {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            background: var(--navy);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Pier Sans', sans-serif;
+        }
+
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 2rem 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-logo {
+            font-family: 'Pier Sans', sans-serif;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            width: 24px;
+            height: 24px;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .social-icons .facebook {
+            background-image: url('assets/images/facebook.svg');
+        }
+        
+        .social-icons .tiktok {
+            background-image: url('assets/images/tiktok.svg');
+        }
+        
+        .social-icons .instagram {
+            background-image: url('assets/images/instagram.svg');
+        }
+        
+        .social-icons .linkedin {
+            background-image: url('assets/images/linkedin.svg');
         }
     </style>
 </head>
 <body>
-    <h1>Interesul tau pentru platforma UniPal a fost inregistrat. Multumim!</h1>
+    <header>
+        <div class="logo"></div>
+    </header>
+
+    <main>
+        <h1>Cu UNIPAL<br>ziua înveți și<br>noaptea petreci!</h1>
+        <p>UniPal este platforma generației tinere care își dorește să profite la maxim de viața de student: reduceri prin obligațiile oferite special, evenimente educaționale și de divertisment, curator profesionist de evenimente de networking, astfel încât să-ți simplificăm accesul la tot ceea ce contează pentru tine.</p>
+        
+        <form class="email-form">
+            <input type="email" placeholder="Adresa ta de email" required>
+            <button type="submit" class="cta">Sunt interesat</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-logo">UniPal</div>
+        <div class="footer-links">
+            <a href="#">Termeni și Condiții</a>
+            <a href="#">GDPR</a>
+            <a href="#">Politica Cookies</a>
+        </div>
+        <p>Copyright © 2024 UniPal</p>
+        <div class="social-icons">
+            <a href="#" class="facebook" aria-label="Facebook"></a>
+            <a href="#" class="tiktok" aria-label="TikTok"></a>
+            <a href="#" class="instagram" aria-label="Instagram"></a>
+            <a href="#" class="linkedin" aria-label="LinkedIn"></a>
+        </div>
+    </footer>
 </body>
 </html>
